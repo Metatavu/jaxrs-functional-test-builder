@@ -43,10 +43,6 @@
   </developers>
   
   <properties>
-    <!-- Maven -->
-
-    <maven.javadoc.skip>true</maven.javadoc.skip>
-    
     <!-- Java -->
     
     <java.version>1.8</java.version>
