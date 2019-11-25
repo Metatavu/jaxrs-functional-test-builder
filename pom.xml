@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>jaxrs-functional-test-builder</artifactId>
+  <groupId>fi.metatavu.jaxrs.testbuilder</groupId>
+  <packaging>jar</packaging>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>REST test builder</name>
+  <description>Generic test builder for creating functional tests for JAX-RS REST APIs</description>
+  <url>https://github.com/Metatavu/jaxrs-functional-test-builder</url>  
+  
+  <licenses>
+    <license>
+      <name>GNU LGPL v3</name>
+      <url>http://www.gnu.org/licenses/lgpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/Metatavu/jaxrs-functional-test-builder/issues</url>
+  </issueManagement>
+  
+  <scm>
+    <developerConnection>scm:git:git@github.com:Metatavu/jaxrs-functional-test-builder.git</developerConnection>
+    <url>git@github.com:Metatavu/jaxrs-functional-test-builder.git</url>
+    <connection>scm:git:git@github.com:Metatavu/jaxrs-functional-test-builder.git</connection>
+    <tag>1.1.0</tag>
+  </scm>
+  
+  <organization>
+    <name>Metatavu Oy</name>
+    <url>https://metatavu.fi</url>
+  </organization>
+  
+  <developers>
+    <developer>
+      <email>devs@metatavu.fi</email>
+      <name>Metatavu Oy</name>
+      <organization>Metatavu Oy</organization>
+      <organizationUrl>https://www.metatavu.fi</organizationUrl>
+    </developer>    
+  </developers>
+  
+  <properties>
+    <!-- Maven -->
+
+    <maven.javadoc.skip>true</maven.javadoc.skip>
+    
+    <!-- Java -->
+    
+    <java.version>1.8</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    
+    <!-- Logging -->
+    
+    <version.org.slf4j>1.7.22</version.org.slf4j>
+    
+    <!-- Jackson -->
+
+    <jackson.version>2.9.8</jackson.version>
+    
+    <!-- Commons -->
+    
+    <commons-io.version>2.6</commons-io.version>
+    
+    <!-- Test -->
+    
+    <version.junit>4.12</version.junit>
+    <jsonassert.version>1.5.0</jsonassert.version>
+    
+  </properties>
+  
+  <dependencies>
+    
+    <!-- Logging -->
+    
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${version.org.slf4j}</version>
+    </dependency>
+    
+    <!-- Jackson -->
+    
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+        
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+      
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.skyscreamer</groupId>
+      <artifactId>jsonassert</artifactId>
+      <version>${jsonassert.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>${commons-io.version}</version>
+    </dependency>
+    
+    <!-- Test -->
+    
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${version.junit}</version>
+    </dependency>
+    
+  </dependencies>
+  
+</project>
