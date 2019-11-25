@@ -3,7 +3,7 @@
   <artifactId>jaxrs-functional-test-builder</artifactId>
   <groupId>fi.metatavu.jaxrs.testbuilder</groupId>
   <packaging>jar</packaging>
-  <version>1.0.4-SNAPSHOT</version>
+  <version>1.0.4</version>
   <name>REST test builder</name>
   <description>Generic test builder for creating functional tests for JAX-RS REST APIs</description>
   <url>https://github.com/Metatavu/jaxrs-functional-test-builder</url>  
@@ -25,7 +25,7 @@
     <developerConnection>scm:git:git@github.com:Metatavu/jaxrs-functional-test-builder.git</developerConnection>
     <url>git@github.com:Metatavu/jaxrs-functional-test-builder.git</url>
     <connection>scm:git:git@github.com:Metatavu/jaxrs-functional-test-builder.git</connection>
-    <tag>1.1.0</tag>
+    <tag>jaxrs-functional-test-builder-1.0.4</tag>
   </scm>
   
   <organization>
