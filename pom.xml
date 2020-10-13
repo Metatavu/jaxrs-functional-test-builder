@@ -63,7 +63,7 @@
     
     <!-- Test -->
     
-    <version.junit>4.12</version.junit>
+    <version.junit>4.13.1</version.junit>
     <jsonassert.version>1.5.0</jsonassert.version>
     
   </properties>
