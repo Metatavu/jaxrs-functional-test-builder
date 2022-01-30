@@ -1,7 +1,5 @@
 package fi.metatavu.jaxrs.test.functional.builder.auth;
 
-import java.io.IOException;
-
 import fi.metatavu.jaxrs.test.functional.builder.AbstractTestBuilder;
 
 /**
@@ -11,39 +9,31 @@ import fi.metatavu.jaxrs.test.functional.builder.AbstractTestBuilder;
  * @author Antti Leppä
  */
 public abstract class AuthorizedTestBuilderAuthentication <C> extends AbstractTestBuilderAuthentication <C> {
-  
-  
-  private AccessTokenProvider accessTokenProvider;
+
+  private final AuthProvider authProvider;
 
   /**
    * Constructor
    * 
    * @param testBuilder testBuilder
-   * @param accessTokenProvider access token builder
+   * @param authProvider auth provider
    */
-  public AuthorizedTestBuilderAuthentication(AbstractTestBuilder<C> testBuilder, AccessTokenProvider accessTokenProvider) {
+  public AuthorizedTestBuilderAuthentication(AbstractTestBuilder<C> testBuilder, AuthProvider authProvider) {
     super(testBuilder);
-    this.accessTokenProvider = accessTokenProvider;
+    this.authProvider = authProvider;
   }
-  
-  /** 
-   * Creates ApiClient authenticated by access token provided by the access token provider
-   * 
-   * @return ApiClient API client
-   * @throws IOException thrown when access token generation fails
-   */
+
   @Override
-  protected C createClient() throws IOException {
-    String accessToken = accessTokenProvider != null ? accessTokenProvider.getAccessToken() : null;
-    return createClient(accessToken);
+  protected C createClient() {
+    return createClient(authProvider);
   }
 
   /**
-   * Creates ApiClient authenticated by the given access token
-   *  
-   * @param accessToken access token
-   * @return ApiClient authenticated by the given access token
+   * Creates ApiClient authenticated by the given auth provider
+   *
+   * @param authProvider auth provider
+   * @return ApiClient authenticated by the given auth provider
    */
-  protected abstract C createClient(String accessToken);
-  
+  protected abstract C createClient(AuthProvider authProvider);
+
 }

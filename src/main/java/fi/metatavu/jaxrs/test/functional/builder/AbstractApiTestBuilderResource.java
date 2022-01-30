@@ -38,7 +38,6 @@ public abstract class AbstractApiTestBuilderResource <T, A, C> implements TestBu
    * Constructor
    * 
    * @param testBuilder testBuilder
-   * @param apiClient API client
    */
   public AbstractApiTestBuilderResource(AbstractTestBuilder<C> testBuilder) {
     this.testBuilder = testBuilder;
@@ -46,7 +45,7 @@ public abstract class AbstractApiTestBuilderResource <T, A, C> implements TestBu
   
   @Override
   public T addClosable(T t) {
-    testBuilder.addClosable(new CloseableApiResource<T, A, C>(this, t));
+    testBuilder.addClosable(new CloseableApiResource<>(this, t));
     return t;
   }
   
@@ -101,8 +100,8 @@ public abstract class AbstractApiTestBuilderResource <T, A, C> implements TestBu
    * @param expected expected
    * @param actual actual
    * @return comparison result
-   * @throws JSONException
-   * @throws JsonProcessingException
+   * @throws JSONException when reading of JSON fails
+   * @throws JsonProcessingException when processing of JSON fails
    */
   protected JSONCompareResult jsonCompare(Object expected, Object actual) throws JSONException, JsonProcessingException {
     CustomComparator customComparator = new CustomComparator(JSONCompareMode.LENIENT);
@@ -132,7 +131,7 @@ public abstract class AbstractApiTestBuilderResource <T, A, C> implements TestBu
    * 
    * @param object object
    * @return JSON string
-   * @throws JsonProcessingException
+   * @throws JsonProcessingException thrown when JSON serialization fails
    */
   private String toJSONString(Object object) throws JsonProcessingException {
     if (object == null) {

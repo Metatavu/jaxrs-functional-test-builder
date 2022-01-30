@@ -15,13 +15,14 @@ public interface TestBuilderResource <T> {
    * @param t closeable
    * @return given instance
    */
-  public T addClosable(T t);
+  T addClosable(T t);
   
   /**
    * Cleans given resource
    * 
    * @param t resource
+   * @throws Exception when cleaning fails
    */
-  public void clean(T t) throws Exception;
+  void clean(T t) throws Exception;
 
 }
