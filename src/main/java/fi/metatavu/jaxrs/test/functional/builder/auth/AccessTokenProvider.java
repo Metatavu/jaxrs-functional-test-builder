@@ -7,14 +7,14 @@ import java.io.IOException;
  * 
  * @author Antti Leppä
  */
-public interface AccessTokenProvider {
+public interface AccessTokenProvider extends AuthProvider {
 
   /**
    * Returns access token
    * 
    * @return access token
-   * @throws IOException
+   * @throws IOException when access token request fails
    */
-  public String getAccessToken() throws IOException;
+  String getAccessToken() throws IOException;
   
 }
