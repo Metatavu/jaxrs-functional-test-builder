@@ -3,8 +3,10 @@ package fi.metatavu.jaxrs.test.functional.builder.auth;
 import fi.metatavu.jaxrs.test.functional.builder.AbstractTestBuilder;
 
 /**
- * Tets
- * @param <C>
+ * Default implementation for api key authentication provider
+ *
+ * @param <C> API Client class
+ * @author Antti Leppä
  */
 public abstract class ApiKeyTestBuilderAuthentication<C> extends AuthorizedTestBuilderAuthentication<C> {
 
