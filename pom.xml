@@ -51,19 +51,19 @@
     
     <!-- Logging -->
     
-    <version.org.slf4j>1.7.22</version.org.slf4j>
+    <version.org.slf4j>1.7.33</version.org.slf4j>
     
     <!-- Jackson -->
 
-    <jackson.version>2.9.10.8</jackson.version>
+    <jackson.version>2.13.1</jackson.version>
     
     <!-- Commons -->
     
-    <commons-io.version>2.7</commons-io.version>
+    <commons-io.version>2.11.0</commons-io.version>
     
     <!-- Test -->
     
-    <version.junit>4.13.1</version.junit>
+    <version.junit>4.13.2</version.junit>
     <jsonassert.version>1.5.0</jsonassert.version>
     
   </properties>
