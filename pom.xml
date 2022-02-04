@@ -3,7 +3,7 @@
   <artifactId>jaxrs-functional-test-builder</artifactId>
   <groupId>fi.metatavu.jaxrs.testbuilder</groupId>
   <packaging>jar</packaging>
-  <version>1.0.5-SNAPSHOT</version>
+  <version>1.0.6-SNAPSHOT</version>
   <name>REST test builder</name>
   <description>Generic test builder for creating functional tests for JAX-RS REST APIs</description>
   <url>https://github.com/Metatavu/jaxrs-functional-test-builder</url>  
@@ -161,9 +161,8 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.6</version>
+        <groupId>org.simplify4u.plugins</groupId>
+        <artifactId>sign-maven-plugin</artifactId>
         <executions>
           <execution>
             <id>sign-artifacts</id>
@@ -173,7 +172,7 @@
             </goals>
           </execution>
         </executions>
-      </plugin>      
+      </plugin>
     </plugins>
   </build>
   

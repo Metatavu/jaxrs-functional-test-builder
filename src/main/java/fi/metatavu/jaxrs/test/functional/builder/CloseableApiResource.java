@@ -1,5 +1,7 @@
 package fi.metatavu.jaxrs.test.functional.builder;
 
+import fi.metatavu.jaxrs.test.functional.builder.auth.AuthProvider;
+
 /**
  * Describes API closeable resource
  * 
@@ -8,10 +10,11 @@ package fi.metatavu.jaxrs.test.functional.builder;
  * @param <T> entity class
  * @param <A> API class
  * @param <C> API client class
+ * @param <P> Auth provider
  */
-public class CloseableApiResource<T, A, C> extends CloseableResource <T> {
+public class CloseableApiResource<T, A, C, P extends AuthProvider> extends CloseableResource <T> {
 
-  private AbstractApiTestBuilderResource<T, A, C> builder;
+  private AbstractApiTestBuilderResource<T, A, C, P> builder;
 
   /**
    * Constructor
@@ -19,7 +22,7 @@ public class CloseableApiResource<T, A, C> extends CloseableResource <T> {
    * @param builder resource builder
    * @param resource resource
    */
-  public CloseableApiResource(AbstractApiTestBuilderResource<T, A, C> builder, T resource) {
+  public CloseableApiResource(AbstractApiTestBuilderResource<T, A, C, P> builder, T resource) {
     super(resource);
     this.builder = builder;
   }
@@ -29,7 +32,7 @@ public class CloseableApiResource<T, A, C> extends CloseableResource <T> {
    * 
    * @return builder
    */
-  public AbstractApiTestBuilderResource<T, A, C> getBuilder() {
+  public AbstractApiTestBuilderResource<T, A, C, P> getBuilder() {
     return builder;
   }
   

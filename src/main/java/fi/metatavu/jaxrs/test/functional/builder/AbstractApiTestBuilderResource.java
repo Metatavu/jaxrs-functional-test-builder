@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.function.Predicate;
 
+import fi.metatavu.jaxrs.test.functional.builder.auth.AuthProvider;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONException;
 import org.skyscreamer.jsonassert.JSONCompare;
@@ -29,17 +30,18 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
  * @param <T> type of resource
  * @param <A> type of API
  * @param <C> type of ApiClient
+ * @param <P> Auth provider
  */
-public abstract class AbstractApiTestBuilderResource <T, A, C> implements TestBuilderResource <T> {
+public abstract class AbstractApiTestBuilderResource <T, A, C, P extends AuthProvider> implements TestBuilderResource <T> {
   
-  private AbstractTestBuilder<C> testBuilder;
+  private AbstractTestBuilder<C, P> testBuilder;
   
   /**
    * Constructor
    * 
    * @param testBuilder testBuilder
    */
-  public AbstractApiTestBuilderResource(AbstractTestBuilder<C> testBuilder) {
+  public AbstractApiTestBuilderResource(AbstractTestBuilder<C, P> testBuilder) {
     this.testBuilder = testBuilder;
   }
   
