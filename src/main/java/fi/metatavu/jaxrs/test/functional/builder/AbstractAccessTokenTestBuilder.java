@@ -1,5 +1,6 @@
 package fi.metatavu.jaxrs.test.functional.builder;
 
+import fi.metatavu.jaxrs.test.functional.builder.auth.AccessTokenProvider;
 import fi.metatavu.jaxrs.test.functional.builder.auth.AuthorizedTestBuilderAuthentication;
 import fi.metatavu.jaxrs.test.functional.builder.auth.InvalidAccessTokenProvider;
 import fi.metatavu.jaxrs.test.functional.builder.auth.NullAccessTokenProvider;
@@ -10,10 +11,10 @@ import fi.metatavu.jaxrs.test.functional.builder.auth.NullAccessTokenProvider;
  * @param <C> API Client class
  * @author Antti Leppä
  */
-public abstract class AbstractAccessTokenTestBuilder<C> extends AbstractTestBuilder<C> {
+public abstract class AbstractAccessTokenTestBuilder<C> extends AbstractTestBuilder<C, AccessTokenProvider> {
 
-  public AuthorizedTestBuilderAuthentication<C> invalid = createTestBuilderAuthentication(this, new InvalidAccessTokenProvider());
+  public AuthorizedTestBuilderAuthentication<C, AccessTokenProvider> invalid = createTestBuilderAuthentication(this, new InvalidAccessTokenProvider());
 
-  public AuthorizedTestBuilderAuthentication<C> anonymous = createTestBuilderAuthentication(this, new NullAccessTokenProvider());
+  public AuthorizedTestBuilderAuthentication<C, AccessTokenProvider> anonymous = createTestBuilderAuthentication(this, new NullAccessTokenProvider());
 
 }
