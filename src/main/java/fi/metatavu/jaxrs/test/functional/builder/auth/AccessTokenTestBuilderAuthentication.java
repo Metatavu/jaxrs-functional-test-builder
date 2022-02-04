@@ -13,7 +13,7 @@ public abstract class AccessTokenTestBuilderAuthentication<C> extends Authorized
   /**
    * Constructor
    *
-   * @param testBuilder  testBuilder
+   * @param testBuilder testBuilder
    * @param authProvider auth provider
    */
   public AccessTokenTestBuilderAuthentication(AbstractTestBuilder<C, AccessTokenProvider> testBuilder, AccessTokenProvider authProvider) {
