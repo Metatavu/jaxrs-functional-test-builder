@@ -8,7 +8,7 @@ import fi.metatavu.jaxrs.test.functional.builder.AbstractTestBuilder;
  * @param <C> API Client class
  * @author Antti Leppä
  */
-public abstract class BasicTestBuilderAuthentication<C> extends AuthorizedTestBuilderAuthentication<C> {
+public abstract class BasicTestBuilderAuthentication<C> extends AuthorizedTestBuilderAuthentication<C, BasicAuthProvider> {
 
   /**
    * Constructor
@@ -16,7 +16,7 @@ public abstract class BasicTestBuilderAuthentication<C> extends AuthorizedTestBu
    * @param testBuilder  testBuilder
    * @param authProvider auth provider
    */
-  public BasicTestBuilderAuthentication(AbstractTestBuilder<C> testBuilder, BasicAuthProvider authProvider) {
+  public BasicTestBuilderAuthentication(AbstractTestBuilder<C, BasicAuthProvider> testBuilder, BasicAuthProvider authProvider) {
     super(testBuilder, authProvider);
   }
 

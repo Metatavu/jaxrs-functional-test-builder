@@ -12,9 +12,10 @@ import fi.metatavu.jaxrs.test.functional.builder.auth.AuthorizedTestBuilderAuthe
  * Test builder class
  *
  * @param <C> API Client class
+ * @param <P> Auth provider
  * @author Antti Leppä
  */
-public abstract class AbstractTestBuilder <C> implements AutoCloseable {
+public abstract class AbstractTestBuilder <C, P extends AuthProvider> implements AutoCloseable {
 
   private List<CloseableResource<?>> closables = new ArrayList<>();
 
@@ -25,7 +26,7 @@ public abstract class AbstractTestBuilder <C> implements AutoCloseable {
    * @param authProvider auth provider
    * @return initialized test builder authentication
    */
-  public abstract AuthorizedTestBuilderAuthentication<C> createTestBuilderAuthentication(AbstractTestBuilder<C> abstractTestBuilder, AuthProvider authProvider);
+  public abstract AuthorizedTestBuilderAuthentication<C, P> createTestBuilderAuthentication(AbstractTestBuilder<C, P> abstractTestBuilder, P authProvider);
 
   /**
    * Adds closable to clean queue
