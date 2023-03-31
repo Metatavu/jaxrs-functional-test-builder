@@ -55,7 +55,7 @@
     
     <!-- Jackson -->
 
-    <jackson.version>2.13.1</jackson.version>
+    <jackson.version>2.13.4.2</jackson.version>
     
     <!-- Commons -->
     
